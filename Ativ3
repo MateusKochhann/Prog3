@@ -1,0 +1,56 @@
+//Atividade 3
+<?php
+class Prod{
+public $nome;
+public $preco;
+public $quant;
+public $pagar;
+public $desconto;
+      public function Prod($n,$p,$q){
+            $this->nome = $n;
+            $this->preco= $p;
+            $this-> quant = $q;
+            $this->pagar = $this->preco * $this->quant;
+    
+    
+  if($this->quant >=11 and $this->quant <=20){
+        $this->desconto= "10%";
+        $desc = ($this->pagar*10)/100;
+        $this->pagar = $this->pagar - $desc;
+        
+      }
+      
+      
+             elseif($this->quant >=21 and $this->quant<=50){
+        $this->desconto= "20%";
+        $desc = ($this->pagar*20)/100;
+        $this->pagar = $this->pagar - $desc;
+      }
+      
+      
+             elseif($this->quant >50){
+        $this->desconto= "25%";
+        $desc = ($this->pagar*25)/100;
+        $this->pagar = $this->pagar - $desc;
+      }
+      
+      
+              else{
+        $this->desconto = 0;
+      }
+  }
+}
+
+
+
+$p1 = new Prod("salgadinho",2.00,60);
+  print_r($p1);
+
+
+$p2 = new Prod("paçoca",1.50,75);
+  print_r($p2);
+
+
+$p3 = new Prod("Refrigerante",7.50,30);
+  print_r($p3);
+  ?>
