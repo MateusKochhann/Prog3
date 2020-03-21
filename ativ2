@@ -1,0 +1,93 @@
+//Atividade 2
+<?php
+class Empreg{
+  public $nome;
+  public $sobrenome;
+  public $salmen;
+  public $salanu;
+
+  public function __construct(){
+    $this-> pnome = "Mateus";
+    $this-> snome = "Kochhann";
+    $this-> salmen = 1200.00;
+  }
+  
+  
+  public function setnome($recebe){
+    return $this->pnome = $recebe;
+  }
+  
+  
+  public function getnome(){
+    return $this ->pnome;
+  }
+  
+  
+  public function setsobrenome($recebe1){
+    return $this->sobrenome = $recebe1;
+  }
+  
+  
+ 
+  public function getsobrenome(){
+    return $this ->sobrenome;
+  }
+  
+  
+  public function setSalmen($recebe2){
+    return $this->salmen = $recebe2;
+  }
+  
+  
+  public function getSalmen(){
+    return $this ->salmen;
+    
+    
+  }
+  public function setSalanu(){
+    
+    return $this->salanu = $this->salmen*12;
+  }
+  
+  
+  public function getSalanu(){
+    return $this ->salanu;
+  }
+  
+  
+  public function validaSalmen(){
+    if($this->salmen < 0){
+      $this->salmen = 0.0;
+    }
+  }
+  
+  
+  public function aumentasalmen(){
+    $porc = ($this->salmen*10)/100;
+    $this-> salmen = $this->salmen + $porc;
+  }
+}
+
+
+//empregado 1
+      $e1 = new Empreg();
+      $e1->validaSalmen();
+      $e1->setSalanu();
+          echo "Salario anual de {$e1-> getnome()} {$e1->getsobrenome()} é R$ {$e1->getSalanu()}\n"; 
+      $e1 -> aumentasalmen();
+      $e1->setSalanu();
+        echo "Salario anual de {$e1-> getnome()} recebeu acrescimo de 10% e agora é de R$ {$e1->getSalanu()} \n ";
+//empregado 2
+
+
+  $e2 = new Empreg();
+  $e2 -> setPnome("Junior");
+  $e2 -> setSnome("da Silva");
+  $e2->setSalmen(1000);
+  $e2->validaSalmen();
+  $e2->setSalanu();
+    echo "Salario anual de {$e2-> getPnome()}  {$e2->getSnome()} é R$ {$e2->getSalanu()} \n"; 
+  $e2 -> aumentasalmen();
+  $e2->setSalanu();
+    echo "Salario anual de {$e2-> getPnome()} recebeu acrescimo de 10% e agora é de R$ {$e2->getSalanu()} \n ";
+?>
